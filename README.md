@@ -1,8 +1,3 @@
-<h1 align="center">Compass Uol Bot</h1>
-
-![Logo](https://s3.sa-east-1.amazonaws.com/remotar-assets-prod/company-profile-covers/cl7god9gt00lx04wg4p2a93zt.jpg)
-
-
 ## 📌 Índice
 - [Descrição do Projeto](#-Descrição-do-Projeto)
 - [Descrição da API](#-Descrição-da-API)
@@ -13,7 +8,6 @@
 - [Como usar o sistema](#-como-usar-o-sistema)
 - [Experiências obtidas](#-experiências-obtidas)
 - [Tecnologias utilizadas](#-tecnologias-utilizadas)
-- [Dificuldades encontradas](#️-dificuldades-encontradas)
 - [Autores](#-autores)
 
 
@@ -28,11 +22,6 @@ Construir um chat bot com livre escolha do tema, utilizando o Amazon Lex V2 e fa
     - <strong>DynamoDB</strong>: Utilizamos o DynamoDB para armazenarmos nossas infromações relacioandas as sentenças informadas, sendo elas: Id, Data de Criação, URL do S3 e a frase.
     - <strong>Polly</strong>: A rota POST, tuiliza do arquivo Polly.py para transformar a frase recebida em um aúdio e armazenar em um bucket da S3.
 - <strong>Link da Rota</strong>: Segue o link para rota POST, a frase deve ser inserida após o símbolo de igualdade. https://s9uqg4t7c9.execute-api.us-east-1.amazonaws.com/v1/tts?phrase=
-
-
-## 🎯 Desenvolvimento e escolha do tema
-O chatbot foi desenvolvido na plataforma Lex, diretamente pelo console, e utilizamos conditional branching para controle de fluxo em quase todas as intents. O tema foi escolhido pensando em criar algo que pudesse ser útil para situações reais, oferecendo informações sobre vagas disponíveis na Compass UOL com base na área de interesse do usuário, facilitando o cadastro nas vagas e fornecendo detalhes sobre a empresa e seus canais de comunicação.
-
 
 ## ✔️ Intents utilizadas
 - <strong>WelcomeIntent</strong>: Intent inicial, apresentação do bot e das opções disponíveis "Vagas", "Canais de comunicação", "Sobre Nós".
@@ -102,18 +91,6 @@ README.md
     - Vincule a lambda criada anteriormente ao bot.
     - Após isso crie uma conta no Slack e integre o bot Lex nele.
 
-
-## 🏆 Experiências obtidas
-Durante o projeto pudemos ter a experiência de desenvolver nossas habilidades de comunicação e trabalho em equipe e também, aprimorar nossas habilidades em diversas novas tecnologias, destacamos:
-- O uso de lambda para armazenar dados relacionados ao chatbot, como logs de conversação e arquivos de configuração. 
-- Experiência em configurar buckets S3 e gerenciar permissões de acesso para garantir a segurança dos dados.
-- Banco de dados NoSQL usado para armazenar informações estruturadas, como dados de usuários e logs de interação. 
-- Armazenamento dos áudios gerados pela Polly, permitindo uma recuperação rápida e eficiente.
-- Uso da biblioteca AWS SDK para Python, essencial para a comunicação entre os scripts Python e os serviços AWS.
-
-Essas experiências proporcionaram entendimento sobre a integração de serviços AWS para desenvolver soluções escaláveis e eficientes, além de aprimorar habilidades em programação Python e utilização de SDKs para automatizar e otimizar processos.
-
-
 ## 💻 Tecnologias utilizadas
 1. Serviços AWS:
     - AWS S3: Para armazenamento de dados.
@@ -126,17 +103,6 @@ Essas experiências proporcionaram entendimento sobre a integração de serviço
 2. Tecnologias utilizadas para programação:
     - Python: Linguagem utilizada para toda a lógica da aplicação.
     - Boto 3: AWS SDK para a comunicação da AWS com o Python.
-
-
-## 🛠️ Dificuldades encontradas
-1. <strong>Integração do Lambda com o Amazon Lex</strong>:
-Enfrentamos várias dificuldades com a integração. Desde compreender que o bot precisa apenas chamar uma função Lambda para gerenciar todas as outras, até sua implementação. Tivemos dificuldades em estabelecer a conexão devido a repetidos erros de permissão que impediram o progresso.
-    - Tínhamos várias ideias para integrar o Lambda com o Lex e explorar diversas funcionalidades adicionais, porém, devido ao tempo necessário para resolver a integração, não conseguimos implementar todas as propostas.
-2. <strong>Funcionalidades no Lex vs Slack</strong>:
-Enfrentamos um desafio ao perceber que algumas funcionalidades testadas exclusivamente no Lex não continuavam operacionais ao serem implementadas no Slack. Por exemplo, um botão que ainda funcionava no Lex após ser selecionado não operava corretamente no Slack.
-3. <strong>Converter o texto para áudio</strong>:
-Encontramos outra dificuldade ao tentar obter o texto da mensagem anterior enviada pelo bot para poder retorná-lo ao usuário em formato de áudio. Como sabíamos como implementar a parte do áudio, mas não a captura de texto, oferecemos uma funcionalidade alternativa: o usuário digita o que deseja converter em áudio, e utilizamos a função Lambda da AWS com a API da parte 1 para realizar essa conversão.
-
 
 ## ✍🏻 Autores
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/120669342?v=4" width=115><br><sub>José Acerbi Almeida Neto</sub>](https://github.com/JoseJaan) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/142454135?v=4" width=115><br><sub>Lívia Marques Rodrigues</sub>](https://github.com/livmrqs) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/137515142?v=4" width=115><br><sub>Rafael Alves Silva Rezende</sub>](https://github.com/rafa-rez) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/123120658?v=4" width=115><br><sub>Samuel de Oliveira Vanoni</sub>](https://github.com/SamuVanoni)
